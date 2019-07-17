@@ -27,7 +27,7 @@ According to our benchmarks, a K80 is 84% slower than a P4 so this setup will ro
 
 ### Storage
 
-In both cases, by getting our suggested 200GB Standard Disk storage size ([less storage hampers experience](https://cloud.google.com/compute/docs/disks/)), there will be an **additional charge of $9.60 a month**.
+In both cases, by getting the suggested 200GB Standard Disk storage size ([less storage hampers experience](https://cloud.google.com/compute/docs/disks/)), there will be an **additional charge of $9.60 a month**.
 
 ### How much will you use this course
 
@@ -139,8 +139,8 @@ ERROR: (gcloud.compute.instances.create) Could not fetch resource:
 You need to adjust your GPU quotas.
 1. Go to [Google Cloud Quotas Page](https://console.cloud.google.com/iam-admin/quotas).
 2. If you signed up with a free tier account, you first need to upgrade to a paid account; do so by clicking the "Upgrade account" button at the top right of the page. This won't affect your $300 credit.
-3. In filter type, select metric to be GPUs(all regions) and Location as Global 
-4. Click edit quotas and select the quota to edit(GPUs All Regions). Set the new quota limit to 1 or more 
+3. In filter type, select metric to be GPUs (all regions) and Location as Global.
+4. Click edit quotas and select the quota to edit (GPUs All Regions). Set the new quota limit to 1 or more.
 Your request may require confirmation, which Google claims typically takes two business days to get.
 
 You will have to wait a little bit until you see the text informing you the instance has been created. You can see the instance online [here](https://console.cloud.google.com/compute/) in your list of instances (note that this will be the page you have to go to later to stop your instance). 
@@ -160,7 +160,7 @@ gcloud compute ssh --zone=$ZONE jupyter@$INSTANCE_NAME -- -L 8080:localhost:8080
 
 Before you are able to connect, Google Cloud may ask you to create an SSH key. Just follow the prompts (the passphrase is optional, if you aren't going to be using this key for anything too secure).
 
-If everything went ok, you should now be connected to your GCP instance! To use it, simply go to [localhost:8080/tree](http://localhost:8080/tree) and you will find yourself in a jupyter notebook environment. Note that this only works while you maintain the ssh connection in your terminal.
+If everything went ok, you should now be connected to your GCP instance! To use it, simply go to [localhost:8080/tree](http://localhost:8080/tree) and you will find yourself in a jupyter notebook environment. Note that this only works while you maintain the ssh connection in your terminal. **Note**: *GCP also installs a system called "JupyterLab", which is still in beta, and doesn't support everything in the courses; therefore, you need to use "Jupyter Notebook", which is what the link above will take you to.*
 
 ### Preemptible instances:
 
@@ -191,7 +191,7 @@ You should also update the fastai library:
 sudo /opt/anaconda3/bin/conda install -c fastai fastai
 ```
 
-Next from your [jupyter notebook](http://localhost:8080/tree), click on 'tutorials', 'fastai' and you should look at something like this
+Next, from your [jupyter notebook](http://localhost:8080/tree): click on 'tutorials', 'fastai', 'course-v3', and you should see something like this:
 
 <img alt="nb tuto" src="/images/jupyter.png" class="screenshot">
 

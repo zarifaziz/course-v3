@@ -1,44 +1,57 @@
 ---
-
 title: Salamander
 sidebar: home_sidebar
-
 ---
 
 # Welcome to Salamander!
 
-It takes about 1 minute to signup & launch a Salamander server. The servers include everything you need to complete the fastai v3 course. Once launched, you can jump straight to Jupyter Notebook or connect directly via ssh.
+<img alt="" src="/images/salamander/logo.png" class="screenshot">
+
+This guide takes about 1 minute to complete. Once complete, you will have access to a GPU-enabled Jupyter Notebook and the course-v3 materials
 
 If you are returning to work and have previously completed the steps below, please go to the [returning to work](https://course.fast.ai/update_salamander.html) section.
 
 ## Pricing
 
-Salamander tracks the AWS _spot_ price +26%. Prices at time of writing:
+We recommend the "Accelerated Computing" configuration which costs **\$0.45 per hour**.
 
-- K80: $0.36 per hour
-- V100: $1.32 per hour
+### Storage
+
+You should use the suggested 75GB disk size, which is an **additional \$7.50 per month**. You can increase the disk size later if you need more space.
+
+### Free credits for students
+
+You can redeem any AWS coupon on Salamander. Students can claim between **$75 to $110 free credits** via the GitHub education pack.
+
+### How much will you use this course
+
+Considering that the course requires, over 2 months, 80 hours of homework plus the 2 hours of working through each lesson, we calculated roughly how much you would spend in the course.
+
+- _Accelerated Computing_ + _Storage_: (80+2\*7)\*$0.38 + $7.50\*2 = **\$50.72**
 
 ## Step 1: Create an account
 
-Visit [https://salamander.ai](https://salamander.ai), click "Get Started", fill-in the form & add your card details.
+Visit [https://salamander.ai](https://salamander.ai), click "Get Started", complete the signup form, and add your card details.
 
 <img alt="" src="/images/salamander/create_account.png" class="screenshot">
 
+Students can claim their free credits at [https://salamander.ai/redeem-aws-coupon](https://salamander.ai/redeem-aws-coupon).
+
+<img alt="" src="/images/salamander/coupon.png" class="screenshot">
+
 ## Step 2: Create your server
 
-> If you already have a Salamander account, we recommend creating a brand new server to get the latest version of fastai
-
-Pick your desired hardware & storage size (if you don't know what to choose, just keep the default options). Don't forget to accept the 'cuDNN Software License Agreement' and to check the acknowledgements above "Launch Server" before clicking it.
+Make sure the "PyTorch 1.0, fastai, and the v3 MOOC course" software is selected, leave the remaining defaults as they are, and click "Launch server".
 
 <img alt="" src="/images/salamander/create_server.png" class="screenshot">
 
-Wait about a minute for the server to start. Once finished, it will look like this:
+Your server will appear straight away, and after a couple minutes the orange status indicator will turn blue.
 
 <img alt="" src="/images/salamander/ready.png" class="screenshot">
 
 ## Step 3: Open Jupyter Notebook
 
-Click 'Jupyter Notebook' to access the course materials. After Jupyter Notebook loads, click on 'fastai-courses' & then 'course-v3'.
+Click 'Jupyter Notebook' to access the course materials. After Jupyter Notebook loads, click on 'course-v3'.
 
 <img alt="nb tuto" src="/images/salamander/final.png" class="screenshot">
 
@@ -46,18 +59,19 @@ See [here](index.html) for instructions on running the Jupyter Notebook tutorial
 
 ## Step 4: Update the fastai library
 
-Before you start working you will need to update the fastai library. To do this you will have to access the terminal. You can do this by clicking in 'New', 'Terminal'.
+Before you start working it's a good idea ot update the pytorch and fastai libraries, and the course notebooks. To do this you will have to access the terminal. You can do this by clicking in 'New', 'Terminal'.
 
 <img alt="terminal" src="/images/terminal.png" class="screenshot">
 
-Once you click on 'Terminal' a new window should open with a terminal. Type:
+Once you click on 'Terminal' a new window should open with a terminal. Type (or copy and paste):
 
-``` bash
-source activate fastai
-conda install -c fastai fastai
+```bash
+conda install -c fastai -c pytorch fastai pytorch
+cd course-v3/
+git pull
 ```
 
-Now you should close the terminal window.
+These steps may take a couple of minutes to complete. When done, you should close the browser tab containing the terminal. You can now click on "course-v3", and then the first course notebook, and get started!
 
 ## Step 5: Stop your server
 
@@ -67,9 +81,9 @@ When you're all done, **don't forget to shut down your server**, so you don't ge
 
 For more details, & updating the course / fastai library see "[Returning to work](update_salamander.html)".
 
-## Advanced users: Connect via terminal
+## Advanced users: Full server access
 
-Click "Setup Access Key" and generate or upload an ssh key - it'll get added to all of your servers automatically. You can then copy & paste `ssh ubuntu@[xxx.xxx.xxx.xxx]` from the webpage to your terminal. Press enter and you're in!
+Salamander isn't just for Jupyter Notebook - each server is a full Ubuntu instance. To connect, click "Setup Access Key" and generate or upload an ssh key - it'll get added to all of your servers automatically. You can then copy & paste `ssh ubuntu@[xxx.xxx.xxx.xxx]` from the webpage to your terminal. Press enter and you're in!
 
 Note: you should always generate keys yourself if you'd like to use them for several different platforms ([in-depth guide](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/))
 

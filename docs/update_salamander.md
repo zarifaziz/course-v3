@@ -34,7 +34,7 @@ To update the course repo, you will need to be in terminal. If you used the `ssh
 This will open a new window, in which you should run those two instructions:
 
 ```bash
-cd fastai-courses/course-v3
+cd course-v3
 git pull
 ```
 
@@ -47,8 +47,9 @@ This should give you the latest of the course notebooks. If you modified some of
 To update the fastai library, open the terminal like before and type
 
 ```bash
-source activate fastai
-conda install -c fastai fastai
+conda install -c fastai -c pytorch fastai pytorch
+cd course-v3/
+git pull
 ```
 
 ### Stop your instance
